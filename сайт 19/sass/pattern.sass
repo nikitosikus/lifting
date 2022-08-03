@@ -1,0 +1,30 @@
+@import "variables.sass"
+
+%flexCenter
+	display: flex
+	justify-content: center
+	align-items: center
+
+%maxWidth
+	max-width: 1450px
+	width: 100%
+
+%buttonRed
+	background: $backgroundbutton
+	padding: 15px 10px
+	width: 150px
+	display: flex
+	justify-content: center
+	align-items: center
+	border-radius: 30px
+	// color: #fff
+	transition-duration: .7s
+	transition-property: all
+	&:hover
+		background: $backgroundbuttonHover
+		transition-duration: .7s
+		transition-property: all
+		color: $backgroundLitePink
+
+
+

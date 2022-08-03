@@ -1,0 +1,1855 @@
+
+html, body 
+	font-size: medium
+	font-family: 'Source Serif Pro', sans-serif
+	max-width: 1450px
+	width: 100%
+	box-sizing: border-box
+	margin: 0 auto
+	padding: 0
+a 
+	text-decoration: none
+	color: #000
+	cursor: pointer
+ul, li, h1, h2, h3, h4, h5, h6, p 
+	list-style-type: none
+	margin: 0
+	padding: 0
+form, input, label
+	box-sizing: border-box
+	font-family: inherit
+	font-size: inherit
+	margin: 0
+	outline: none
+// @import------------------------------------------------
+@import "pattern.sass"
+@import "variables.sass"
+// header-------------------------------------------------
+.header
+	@extend %flexCenter
+	@extend %maxWidth
+	background: $backgroundbutton
+	min-height: 50px
+	.header_
+		@extend %flexCenter
+		justify-content: space-between
+		flex-direction: row
+		max-width: 1250px
+		width: 100%
+	p 
+		margin-left: 25px
+	.header_block
+		display: flex
+		justify-content: space-evenly
+		align-items: center
+		max-width: 400px
+		width: 100%
+	.header_block_img
+		// width: 20px
+		// height: 20px
+@media only screen and (max-width: 1000px)
+	.header
+		display: none
+/* burger --------------------------------------------------------*/
+.navbar 
+	position: sticky
+	left: 1
+	top: -2px
+	max-width: 1450px
+	width: 100%
+	height: 75px
+	background: $backgroundLiteLitePink
+	z-index: 99
+.container
+	max-width: 1250px 
+	width: 95%
+	height: 100%
+	margin: 0 auto
+.navbar__wrap 
+	display: flex
+	justify-content: space-between
+	height: 100%
+.hamb 
+	display: none
+.popup 
+	display: none
+.navLogo 
+	width: 60px
+	height: 60px
+	border-radius: 50%
+	display: flex
+	justify-content: center
+	align-items: center
+	margin: auto 0
+	.logo
+		overflow: hidden
+.menu > li > a 
+	text-decoration: none
+.navbar__wrap .menu 
+	display: flex
+.navbar__wrap .menu > li 
+	display: flex
+	align-items: stretch
+.navbar__wrap .menu > li > a 
+	display: flex
+	align-items: center
+	padding: 0 20px
+	color: $navLink
+	position: relative
+.navbar__wrap
+	.menu3
+		display: flex
+		justify-content: flex-end
+		margin-left: 40px
+.navbar__wrap .menu > li > a:hover
+	color: $backgroundLiteLitePink
+	background: $backgroundbuttonHover
+@media only screen and (max-width: 1000px) 
+	.navbar__wrap .menu 
+		display: none
+	.hamb 
+		display: flex
+		align-items: center
+	.hamb_field 
+		padding: 10px 20px
+		cursor: pointer
+	.bar 
+		display: flex
+		width: 30px
+		height: 2px
+		margin: 6px auto
+		background: $backgroundbutton
+		transition: .4s
+		border-radius: 10px
+	.popup 
+		position: fixed
+		top: 75px
+		left: -100%
+		width: 100%
+		height: 100%
+		background: $backgroundLiteLitePink
+		z-index: 100
+		display: flex
+		transition: .4s
+		z-index: 100
+	.popup.open 
+		left: 0
+	.popup .menu 
+		width: 100%
+		height: 100%
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: flex-start
+		padding: 50px 0
+		overflow: auto
+	.popup .menu > li 
+		width: 100%
+	.popup .menu > li > a 
+		width: 100%
+		display: flex
+		justify-content: center
+		padding: 20px 0
+		font-size: 20px
+		font-weight: bold
+		color: #3f3f3f
+	.popup .menu > li > a:hover 
+		background: rgba(122, 82, 179, .1)
+	.hamb_field.active .bar:nth-child(2) 
+		opacity: 0
+	.hamb_field.active .bar:nth-child(1) 
+		position: relative
+		top: 6px
+		transform: /*translateY(2px)*/ rotate(135deg)
+	.hamb_field.active .bar:nth-child(3) 
+		position: relative
+		top: -10px
+		transform: /*translateY(2px)*/ rotate(-135deg)
+	body.noscroll 
+		overflow: hidden
+// header1-----------------------------------------------------------
+.header1
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 600px
+	height: 100%
+	.header1_
+		@extend %flexCenter
+		@extend %maxWidth
+		justify-content: space-between
+.header1_block1
+	max-width: 850px
+	width: 100%
+	min-height: 600px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	.header1_block1_box1
+		max-width: 650px
+		width: 95%
+		min-height: 500px
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-evenly
+		margin: 0 auto
+	a 
+		@extend %buttonRed
+.header1_block1_box2
+	display: flex
+	justify-content: space-between
+	align-items: center
+	background: $backgroundLitePink
+	max-width: 850px
+	width: 100%
+	min-height: 100px
+	.header1_block1_box2_
+		display: flex
+		align-items: center
+		max-width: 230px
+		min-height: 46px
+		height: 100%
+		font-size: 90%
+		margin: 0px 10px 0px 10px
+	.header1_foto
+		display: flex
+		align-items: center
+		margin: 10px
+	img 
+		// width: 26px
+		// height: 26px
+	p 
+		span 
+			font-weight: 600
+
+.header1_block2
+	display: flex
+	max-width: 600px
+	width: 100%
+	height: 600px
+	img
+		width: 600px
+		height: auto
+@media only screen and (max-width: 1340px)
+	.header1_block1_box2
+		flex-direction: column
+		.header1_block1_box2_
+			margin-top: 10px
+			border-bottom: 1px dashed #000
+		.header1_block1_box2_:nth-child(3)
+			margin-bottom: 10px
+	.header1_block2
+		display: flex
+		max-width: 600px
+		width: 100%
+		height: 682px
+		img
+			width: 600px
+			height: auto
+@media only screen and (max-width: 1000px)
+	.header1_block2
+		display: none
+	.header1_block1
+		max-width: 1000px
+		width: 100%
+		min-height: 500px
+		height: 100%
+		.header1_block1_box1
+			position: relative
+			max-width: 1000px
+			width: 100%
+			min-height: 500px
+			height: 100%
+			color: $backgroundLiteLitePink
+			margin: 0
+			z-index: 10
+			&::before 
+				content: ''
+				position: absolute
+				background: url(../images/headerFoto.png) no-repeat center
+				background-size: cover
+				max-width: 1000px
+				width: 100%
+				min-height: 500px
+				height: 100%
+				z-index: -1
+				filter: brightness(40%) blur(5px)
+			p, h1
+				max-width: 1000px
+				width: 95%
+				margin: 0 auto
+			a 
+				margin-left: 10px
+				color: $backgroundLiteLitePink
+	.header1_block1_box2
+		max-width: 1000px
+		width: 100%
+@media only screen and (max-width: 600px)
+	.header1_block1_box1
+		p
+			font-size: 75% 
+// box1-----------------------------------------------------------
+.box1
+	@extend %flexCenter
+	@extend %maxWidth
+	// margin-bottom: 300px
+	min-height: 800px
+	height: 100%
+	.box1_
+		@extend %flexCenter
+		flex-direction: column
+		max-width: 1000px
+		width: 95%
+.box1_block2
+	.box1_block2_
+	h4
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			left: 130px
+			top: 0
+			width: 15px
+			height: 20px
+			background: url(../images/arrowToDown.png) no-repeat center
+			background-size: contain
+			display: block
+.box1_block2
+	display: flex
+	width: 100%
+	border-bottom: 1px solid #CAC8CA
+	.box1_block2_
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin: 20px 0px 20px 0px
+		width: 100%
+	.box1_block2_1
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 60%
+	.box1_block2_2
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 30%
+	.box1_block2_text3
+		font-weight: 600
+	a 
+		@extend %buttonRed
+.box1_block2:nth-child(7)
+	.box1_block2_text1
+		max-width: 450px
+		width: 100%
+.box1_block2:nth-child(8)
+	.box1_block2_text1
+		max-width: 450px
+		width: 100%
+@media only screen and (max-width: 900px)
+	.box1_block2
+		// min-height: 150px
+		.box1_block2_
+			min-height: 100px
+			height: 100%
+		.box1_block2_1
+			flex-direction: column
+			justify-content: space-between
+			align-items: flex-start
+			min-height: 100px
+		.box1_block2_2
+			flex-direction: column
+			align-items: flex-end
+			justify-content: space-between
+			min-height: 100px
+	.box1_block2:nth-child(7)
+		display: none
+	.box1_block2:nth-child(8)
+		display: none
+// box2---------------------------------------------------------------
+.box2
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 800px
+	height: 100%
+	flex-direction: column
+.box2_1
+	@extend %flexCenter
+	align-items: flex-start
+
+	@extend %maxWidth
+	min-height: 300px
+	height: 100%
+	background: $backgroundbutton
+	.box2_1_text
+		width: 165px
+		text-align: center
+		margin-top: 70px
+	h2 
+		position: relative
+		color: $backgroundLiteLitePink
+		&::after
+			content: ''
+			position: absolute
+			left: 170px
+			top: 7px
+			width: 20px
+			height: 20px
+			display: block
+			background: url(../images/upArrowWhite.png) no-repeat center
+			background-size: contain
+.box2_2
+	@extend %maxWidth
+	@extend %flexCenter
+	min-height: 500px
+	height: 100%
+	background: url(../images/Rectangle98.png) no-repeat center
+	background-size: cover
+	position: relative
+	.box2_2_
+		position: absolute
+		top: -120px
+		display: flex
+		justify-content: space-between
+		max-width: 1050px
+		width: 95%
+		height: auto
+.box2_2_container
+	background: $backgroundLiteLitePink
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	align-items: center
+	width: 250px
+	height: 250px
+	text-align: center
+	margin-right: 10px
+	&:nth-child(4)
+		margin-right: 0
+	h4 
+		width: 170px
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			top: 30px
+			left: 50%
+			transform: translate(-50%)
+			border-radius: 10px
+			width: 50%
+			height: 2px
+			background: $backgroundbutton
+			display: block
+	a 
+		@extend %buttonRed
+.box2_2_price
+	p 
+		position: relative
+		color: $colorPrice
+		&::after
+			content: ''
+			position: absolute
+			top: 50%
+			border-radius: 10px
+			width: 52.88px
+			height: 1px
+			background: $colorPrice
+			display: block
+@media only screen and (max-width: 900px)
+	.box2_2
+		min-height: 740px
+		height: 100%
+		position: relative
+		max-width: 900px
+		width: 100%
+		.box2_2_
+			flex-direction: column
+			align-items: center
+			position: static
+			max-width: 900px
+			width: 100%
+			
+	.box2_2_container
+		max-width: 900px
+		width: 100%
+		margin: 0
+		background: rgba(255, 244, 248, .5)
+		h4
+			opacity: 1
+		> p 
+			margin: 0px 10px 0px 10px
+		&:nth-child(3)
+			display: none
+	.box2_1
+		@extend %flexCenter
+		align-items: flex-start
+
+		@extend %maxWidth
+		min-height: 130px
+		height: 100%
+		.box2_1_text
+			margin-top: 50px
+// box3
+.box3
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 550px
+	height: 100%
+	// margin-bottom: 300px
+	.box3_
+		max-width: 1050px
+		width: 100%
+		min-height: 550px
+		height: 100%
+		@extend %flexCenter
+		flex-direction: column
+		justify-content: space-evenly
+.box3_block1
+	h2 
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			left: 80px
+			top: 5px
+			width: 20px
+			height: 20px
+			display: block
+			background: url(../images/upArrowBlack.png) no-repeat center
+			background-size: contain
+.box3_block2
+	max-width: 1050px
+	width: 95%
+	@extend %flexCenter
+	flex-direction: row
+	justify-content: space-between
+
+.box3_block2_container
+	max-width: 320px
+	width: 100%
+	min-height: 390px
+	height: 100%
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	background: $backgroundLiteLitePink
+	.box3_block2_foto
+		max-width: 320px
+		width: 100%
+		height: auto
+		display: flex
+		img
+			max-width: 320px
+			height: auto
+	.box3_block2_text1
+		display: flex
+		flex-direction: column
+		text-align: center
+	.box3_block2_text2
+		display: flex
+		flex-direction: column
+		text-align: center
+		justify-content: center
+	.box3_block2_price
+		max-width: 130px
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		align-self: center
+		p 
+			position: relative
+			color: $colorPrice
+			&::after
+				content: ''
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 100%
+				height: 2px
+				background: $colorPrice
+				display: block
+	a 
+		@extend %buttonRed
+		margin-bottom: 10px
+@media only screen and (max-width: 1030px)
+	.box3 
+		min-height: 1350px
+		height: 100%
+		.box3_ 
+			min-height: 1350px
+			height: 100%
+			justify-content: space-evenly
+	.box3_block2
+		flex-direction: column
+		min-height: 1200px
+		.box3_block2_container
+			max-width: 1000px
+			width: 100%
+			min-height: 390px
+			height: 100%
+			background: url(../images/Rectangle1292.png) no-repeat center
+			background-size: cover
+			justify-content: space-evenly
+			color: #000
+			.box3_block2_price
+				h3 
+					color: $backgroundbutton
+			.box3_block2_text1
+				margin: 0px 10px 0px 10px
+			a 
+				margin-top: 20px
+		.box3_block2_container
+			&:nth-child(2)
+				background: url(../images/Rectangle1291.png) no-repeat center
+				background-size: cover
+			&:nth-child(3)
+				background: url(../images/Rectangle129.png) no-repeat center
+				background-size: cover
+		.box3_block2_foto
+			display: none
+// box4
+.box4
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 500px
+	height: 100%
+	margin-bottom: 50px
+	.box4_
+		@extend %flexCenter
+		max-width: 1050px
+		width: 95%
+.box4_block1
+	width: 35%
+	display: flex
+	justify-content: center
+	align-items: center
+	.box4_block1_foto
+		width: 100%
+		z-index: 5
+		img 
+			max-width: 450px
+.box_block2
+	width: 65%
+	min-height: 500px
+	height: 100%
+	background: $backgroundLiteLitePink
+	@extend %flexCenter
+	.box_block2_text
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		max-width: 400px
+		min-height: 250px
+		height: 100%
+		z-index: 6
+	a 
+		@extend %buttonRed
+		width: 190px
+		text-align: center
+@media only screen and (max-width: 750px)
+	.box4_block1
+		display: none
+	// .box4
+	.box4_
+		max-width: 700px
+		width: 100%
+		.box_block2
+			// max-width: 700px
+			width: 950%
+			background: url(../images/Rectangle127.png) no-repeat center
+			background-size: cover
+		.box_block2_text
+			margin: 0px 10px 0px 10px
+			min-height: 320px
+			height: 100%
+// box5---------------------------------------------------------
+.box5
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 350px
+	height: 100%
+	// margin-bottom: 300px
+	.box5_
+		@extend %flexCenter
+		max-width: 1050px
+		width: 95%
+		min-height: 350px
+		height: 100%
+		flex-direction: column
+		justify-content: space-evenly
+.box5_block1
+	h2 
+.box5_block2
+	max-width: 1050px
+	width: 100%
+	display: flex
+	justify-content: space-between
+.box5_block2_
+	display: flex
+	max-width: 413px
+	width: 100%
+	min-height: 200px
+	height: 100%
+	justify-content: space-between
+.box5_block2_container
+	max-width: 200px
+	width: 100%
+	min-height: 200px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	align-items: center
+	text-align: center
+	// border: 1px solid #000
+	.box5_block2_container1_img
+		width: 60px
+		height: 60px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-radius: 50%
+		background: $backgroundLiteLitePink
+	.box5_block2_container2
+		margin: 0px 10px 0px 10px
+	h4 
+		margin-bottom: 10px
+@media only screen and (max-width: 1000px)
+	.box5
+		min-height: 450px
+		height: 100%
+		margin-bottom: 50px
+		.box5_
+			min-height: 450px
+			height: 100%
+			justify-content: space-between
+	.box5_block2
+		flex-wrap: wrap
+	.box5_block2_
+		max-width: 1000px
+		width: 100%
+		justify-content: space-evenly
+@media only screen and (max-width: 650px)
+	.box5_block2
+		flex-direction: column
+		align-items: center
+		.box5_block2_container
+			flex-direction: row
+			min-height: 150px
+			max-width: 250px
+			height: 100%
+	.box5_block2_
+		flex-direction: column
+		align-items: center
+// box6
+.box6
+	@extend %flexCenter
+	@extend %maxWidth
+	// margin-bottom: 300px
+	// background: blue
+	min-height: 500px
+	.box6_
+		@extend %flexCenter
+		justify-content: space-between
+		max-width: 1350px
+		width: 100%
+		margin-left: 100px
+.box6_block1
+	max-width: 215px
+	min-height: 100px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	margin-right: 10px
+.box6_block1_arrows
+	display: flex
+	justify-content: space-between
+	max-width: 130px
+.box6_block2
+	max-width: 1130px
+	display: flex
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		top: 410px
+		width: 100%
+		height: 2px
+		background: #CAC8CA
+		display: block
+	.box6_block2_container
+		max-width: 400px
+		min-height: 400px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		margin-right: 10px
+		position: relative
+		&:nth-child(1)::after
+			content: ''
+			position: absolute
+			top: 408px
+			width: 100%
+			height: 6px
+			z-index: 11
+			border-radius: 10px
+			background: $backgroundbutton
+		&:nth-child(3)
+			margin-right: 0px
+		p 
+			min-height: 70px
+			display: flex
+			justify-content: center
+			align-items: flex-start
+			margin-top: 10px
+	.box6_foto
+		max-width: 400px
+		height: auto
+
+	img 
+		max-width: 400px
+		height: 310px
+@media only screen and (max-width: 1400px)
+	.box6_block2_container
+		&:nth-child(3)
+			display: none
+@media only screen and (max-width: 1120px)
+	.box6
+		min-height: 600px
+		height: 100%
+		.box6_
+			width: 1000px
+			min-height: 600px
+			height: 100%
+			justify-content: space-evenly
+			flex-direction: column
+			margin-left: 0
+	.box6_block1
+		max-width: 1000px
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		h2 
+			width: 200px
+			text-align: center
+		.box6_block1_arrows
+			width: 130px
+	.box6_block2
+		.box6_block2_container
+			&:nth-child(2)
+				margin-right: 0
+
+@media only screen and (max-width: 850px)
+	.box6_block2
+		flex-direction: column
+		&::after
+			display: none
+		.box6_block2_container
+			text-align: center
+			&:nth-child(1)::after
+				display: none
+			&:nth-child(2)
+				margin-top: 10px
+			&:nth-child(1)
+				margin-right: 0
+@media only screen and (max-width: 600px)
+	.box6_
+		max-width: 1000px
+		width: 100%
+	.box6_block2
+		max-width: 600px
+		width: 95%
+		display: flex
+		justify-content: center
+		align-items: center
+		.box6_block2_container
+			max-width: 400px
+			width: 95%
+	.box6_foto
+		max-width: 400px
+		width: 100%
+		height: auto
+		img 
+			max-width: 400px
+			width: 100%
+			height: auto
+@media only screen and (max-width: 380px)
+	.box6_block2
+		.box6_block2_container
+			min-height: 360px
+			height: 100%
+@media only screen and (max-width: 350px)
+	.box6_block2
+		.box6_block2_container
+			min-height: 330px
+			height: 100%
+// box7
+.box7
+	background: $backgroundbutton
+	min-height: 500px
+	.box7_
+		align-items: center
+.box7_block2
+	.box7_block2_container
+		display: flex
+		align-items: center
+		justify-content: center
+		&:nth-child(1)::after
+			background: $backgroundLitePink
+		.box7_foto 
+			justify-content: center
+			align-items: center
+			display: flex
+@media only screen and (max-width: 1400px)
+	.box7_block2_container
+		&:nth-child(3)
+			display: none
+@media only screen and (max-width: 1120px)
+	.box7
+		min-height: 535px
+		height: 100%
+		.box7_ 
+			justify-content: center
+			min-height: 535px
+			height: 100%
+	.box7_block2
+		min-height: 350px
+		height: 100%
+		.box7_block2_container
+			min-height: 350px
+			height: 100%
+			&:nth-child(1)::after
+				content: ''
+				top: 358px
+		&::after
+			content: ''
+			top: 360px
+@media only screen and (max-width: 370px)
+	.box7_block2
+		.box7_block2_container
+			min-height: 330px
+			height: 100%
+@media only screen and (max-width: 350px)
+	.box7_block2
+		.box7_block2_container
+			min-height: 270px
+			height: 100%
+// box8
+.box8
+	min-height: 500px
+	.box8_
+		align-items: center
+.box8_block2
+	.box8_block2_container
+		display: flex
+		align-items: center
+		justify-content: center
+		.box8_foto 
+			justify-content: center
+			align-items: center
+			display: flex
+@media only screen and (max-width: 1400px)
+	.box8_block2_container
+		&:nth-child(3)
+			display: none
+@media only screen and (max-width: 1120px)
+	.box8
+		min-height: 580px
+		height: 100%
+		.box8_ 
+			justify-content: center
+			min-height: 580px
+			height: 100%
+	.box8_block2
+		min-height: 350px
+		height: 100%
+		.box8_block2_container
+			min-height: 350px
+			height: 100%
+			&:nth-child(1)::after
+				content: ''
+				top: 358px
+		&::after
+			content: ''
+			top: 360px
+@media only screen and (max-width: 850px)
+	.box8
+		min-height: 850px
+		height: 100%	
+@media only screen and (max-width: 370px)
+	.box8_block2
+		.box8_block2_container
+			min-height: 330px
+			height: 100%
+@media only screen and (max-width: 350px)
+	.box8 
+		min-height: 700px
+		height: 100%
+	.box8_block2
+		.box8_block2_container
+			min-height: 270px
+			height: 100%
+// box9
+.box9
+	@extend %flexCenter
+	flex-direction: column
+	@extend %maxWidth
+	margin-bottom: 50px
+.box9_block1
+	background: $backgroundLiteLitePink
+	min-height: 400px
+	height: 100%
+	@extend %flexCenter
+	align-items: flex-start
+	@extend %maxWidth
+	.box9_block1_
+		display: flex
+		justify-content: space-evenly
+		align-items: center
+		max-width: 120px
+		width: 100%
+		min-height: 80px
+		height: 100%
+		margin-right: 0
+		margin-top: 100px
+	.box9_block1_arrows
+		max-width: 120px
+		width: 100%
+		display: flex
+.box9_block2
+	display: flex
+	background: #fff
+	max-width: 1450px
+	width: 100%
+	min-height: 400px
+	height: 100%
+	position: relative
+	.box9_block2_1
+		position: absolute
+		top: -50%
+		left: 50%
+		transform: translate(-50%, 10%) 
+		max-width: 1250px
+		width: 95%
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
+	.box9_block2_2
+		position: absolute
+		top: 330px
+		left: 50%
+		transform: translate(-50%)
+		max-width: 360px
+		width: 100%
+		display: flex
+		justify-content: space-between
+		a 
+			@extend %buttonRed
+			&:nth-child(2)
+				background: $backgroundLiteLitePink
+				&:hover
+					background: $backgroundbuttonHover
+.box9_block2_1_container
+	max-width: 270px
+	width: 100%
+	min-height: 300px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	margin: 0px 5px 0px 5px
+	padding: 0px 5px 0px 5px
+	background: $colorfff
+	&:nth-child(4)
+		min-height: 490px
+		height: 100%
+		
+	a 
+		display: block
+		&:first-child
+			max-width: 150px
+			text-decoration: underline
+		&:nth-child(2)
+			max-width: 150px
+			text-decoration: underline
+			color: $backgroundbutton
+@media only screen and (max-width: 1110px)
+	.box9_block2_1_container
+		&:nth-child(4)
+			display: none
+	.box9_block2, .box9_block1
+		min-height: 250px
+	.box9_block2
+		min-height: 200px
+	.box9_block1
+		.box9_block1_
+			margin-top: 50px
+@media only screen and (max-width: 910px)
+	.box9_block2_1_container
+		&:nth-child(3)
+			display: none
+		padding: 0px 10px 0px 10px
+@media only screen and (max-width: 570px)
+	.box9_block2_1_container
+		&:nth-child(2)
+			display: none
+	.box9_block2
+		background: $backgroundLiteLitePink
+		.box9_block2_1
+			justify-content: center
+			align-items: center
+	.box9_block2_1_container
+		max-width: 550px
+		width: 100%
+	.box9_block1
+		min-height: 150px
+		.box9_block1_
+			margin-top: 25px
+	.box9_block2
+		min-height: 250px
+		.box9_block2_1
+			top: -60px
+	.box9_block2
+		.box9_block2_2
+			flex-direction: column
+			justify-content: space-between
+			align-items: center
+			position: absolute
+			top: 275px
+			min-height: 100px
+			height: 43%
+// box10
+.box10
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 500px
+	height: 100%
+	background: url(../images/Rectangle105.png) no-repeat center
+	background-size: cover
+	margin-bottom: 50px
+	.box10_
+		display: flex
+		align-items: center
+		max-width: 1150px
+		width: 95%
+		min-height: 500px
+		height: 100%
+.box10_block
+	max-width: 500px
+	width: 100%
+	min-height: 300px
+	height: 100%
+	background: rgba(255, 255, 255, .6) 
+	backdrop-filter: blur(5px)
+	padding: 20px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	h2 
+		margin-bottom: 20px
+	a 
+		@extend %buttonRed
+		margin-top: 20px
+@media only screen and (max-width: 1110px)
+	.box10 
+		margin-top: 220px
+@media only screen and (max-width: 570px)
+	.box10 
+		margin-top: 180px
+// box11
+.box11 
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 1000px
+	height: 100%
+	background: $backgroundLiteLitePink
+	margin-bottom: 50px
+	.box11_ 
+		max-width: 1250px
+		width: 95%
+		min-height: 1000px
+		height: 100%
+		display: flex
+		flex-direction: column
+		justify-content: space-evenly
+.box11_block1
+	display: flex
+	justify-content: space-between
+	max-width: 1250px
+	width: 100%
+.box11_block1_container2
+	max-width: 600px
+	width: 100%
+	min-height: 490px
+	height: 100%
+	margin-left: 20px
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	.box11_block1_container1_text1
+		max-width: 600px
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		&:nth-child(3)
+			min-height: 90px
+			height: 100%
+			border-top: 1px solid rgba(0, 0, 0, .4)
+			border-bottom: 1px solid rgba(0, 0, 0, .4)
+		.box11_arrow
+			background: $backgroundbutton
+			width: 15px
+			height: 15px
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 50%
+			img 
+				width: 10px
+				object-fit: contain
+		h4 
+			width: 270px
+	ul 
+		> li 
+			&::before
+				content: ''
+				width: 4px
+				height: 4px
+				background: $backgroundbutton
+				display: inline-block
+				border-radius: 50%
+				margin-bottom: 2px
+.box11_block2
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	max-width: 1250px
+	width: 100%
+	min-height: 220px
+	height: 100%
+	.box11_block2_container1
+		display: flex
+		justify-content: space-between
+		max-width: 1250px
+		width: 100%
+		position: relative
+		&::after 
+			content: ''
+			position: absolute
+			top: 40px
+			border-radius: 20px
+			width: 100%
+			height: 2px
+			display: block
+			background: rgba(0, 0, 0, .6)
+		h3
+			position: relative
+			&:first-child::after
+				content: ''
+				position: absolute
+				top: 39px
+				width: 100%
+				height: 4px
+				display: block
+				border-radius: 20px
+				background: $backgroundbutton
+				z-index: 13
+	ul > li 
+		margin-top: 5px
+		&::before
+			content: ''
+			width: 10px
+			height: 2px
+			background: $backgroundbutton
+			display: inline-block
+			margin-bottom: 3px
+			border-radius: 20px
+@media only screen and (max-width: 1080px)
+	.box11_block2
+		.box11_block2_container1
+			justify-content: center
+			&::after 
+				content: ''
+				display: none
+			h3
+
+				&:nth-child(2)
+					display: none
+				&:nth-child(3)
+					display: none
+@media only screen and (max-width: 1000px)
+	.box11_block1_container1
+		display: none
+	.box11 
+		.box11_
+			display: flex
+			align-items: center
+	.box11_block1
+		
+	.box11_block1_container2
+		margin-left: 0
+		align-items: center
+		align-self: center
+		margin: 0 auto
+		.box11_block1_container1_text1
+			margin-bottom: 10px
+		li:nth-child(9)
+			margin-bottom: 10px
+			&:nth-child(4)
+				h4
+					width: 100px
+	.box11_block2
+		min-height: 250px
+		height: 100%
+		.box11_block2_container1
+			margin-bottom: 40px
+@media only screen and (max-width: 400px)
+	.box11 
+		margin-bottom: 0
+// box12
+.box12 
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 450px
+	height: 100%
+	margin-bottom: 50px
+	.box12_ 
+		max-width: 1250px
+		width: 95%
+		min-height: 450px
+		height: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+.box12_block1
+	max-width: 300px
+	width: 100%
+	min-height: 400px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+.box12_block2
+	max-width: 650px
+	width: 100%
+	min-height: 450px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	background: $backgroundLiteLitePink
+	.box12_block2_container
+		display: flex
+		align-items: center
+		margin: 0px 120px 0px 10px
+		&:first-child
+			margin-top: 25px
+		&:nth-child(6)
+			margin-bottom: 25px
+	.box12_block2_container_img
+		margin-right: 10px
+.box12_block3
+	width: 300px
+	min-height: 400px
+	height: 100%
+	display: flex
+	justify-content: flex-end
+	img
+		width: 400px
+		min-height: 400px
+		height: 100%
+@media only screen and(max-width: 1060px)
+	.box12 
+		.box12_
+			flex-direction: column
+	.box12_block1
+		order: 2
+		max-width: 500px
+		width: 100%
+		min-height: 200px
+		margin-left: 10px
+	.box12_block2
+		order: 3
+		.box12_block2_container
+			margin-right: 0
+	.box12_block3
+		order: 1
+		max-width: 500px
+		width: 100%
+		img 
+			max-width: 500px
+			width: 100%
+			object-fit: contain
+			height: auto
+@media only screen and(max-width: 360px)
+	.box12_block2
+		.box12_block2_container
+			min-height: 100px
+			&:nth-child(4)
+				min-height: 80px
+			&:nth-child(5)
+				min-height: 80px
+			&:nth-child(6)
+				min-height: 70px
+// box13
+.box13 
+	@extend %flexCenter
+	@extend %maxWidth
+	margin-bottom: 50px
+	.box13_ 
+		@extend %flexCenter
+		flex-direction: column
+		justify-content: flex-start
+		max-width: 1050px
+		width: 100%
+		margin-top: 20px
+		margin-bottom: 20px
+.box13_block1
+	h2 
+		margin-bottom: 30px
+.box13_block2
+	max-width: 800px
+	width: 95%
+	video
+		max-width: 800px
+		width: 100%
+@media only screen and (max-width: 1120px)
+	.box13
+		margin-bottom: 0
+@media only screen and (max-width: 375px)
+	.box13
+	.box13_
+		margin-top: 0
+	.box13_block1
+		max-width: 250px
+		text-align: center
+		h2 
+// box14
+.box14 
+	@extend %flexCenter
+	@extend %maxWidth
+	// margin-bottom: 300px
+	min-height: 700px
+	height: 100%
+	.box14_ 
+		@extend %flexCenter
+		flex-direction: column
+		max-width: 1250px
+		width: 95%
+		min-height: 700px
+		height: 100%
+		justify-content: space-evenly
+.box14_block1
+	margin-right: 0
+	display: flex
+	align-items: center
+	text-align: center
+	h2 
+		// width: 
+	.box14_block1_arrows
+		width: 130px
+.box14_block2
+	max-width: 1250px
+	width: 100%
+	display: flex
+	justify-content: space-between
+	.box14_block2_1
+		margin-right: 20px
+		&:nth-child(2)
+			margin-right: 0
+		max-width: 570px
+		width: 100%
+		display: flex
+		justify-content: space-between
+	.box14_block2_1_container
+		max-width: 250px
+		width: 100%
+		margin-right: 10px
+		&:nth-child(2)
+			margin-right: 0
+	.box14_container_block1
+		max-width: 250px
+		img 
+			max-width: 250px
+.box14_block3
+	@extend %flexCenter
+	a 
+		@extend %buttonRed
+		background: $backgroundLitePink
+@media only screen and (max-width: 1120px)
+	.box14_block2
+		max-width: 1120px
+		width: 100%
+		justify-content: space-evenly
+		.box14_block2_1_container
+			max-width: 200px
+		.box14_block2_1
+			justify-content: space-evenly
+		.box14_container_block1
+			max-width: 200px
+			img
+				max-width: 200px
+@media only screen and (max-width: 900px)
+	.box14_block2
+		max-width: 1120px
+		width: 100%
+		justify-content: space-evenly
+		.box14_block2_1_container
+			max-width: 150px
+			.box14_container_block2
+				text-align: center
+				p 
+					font-size: 70%
+		.box14_block2_1
+			justify-content: space-evenly
+		.box14_container_block1
+			max-width: 150px
+			img
+				max-width: 150px
+@media only screen and (max-width: 690px)
+	.box14
+		min-height: 900px
+		height: 100%
+		.box14_
+			min-height: 900px
+			height: 100%
+	.box14_block2
+		flex-direction: column
+		align-items: center
+		.box14_block2_1
+			margin: 0
+@media only screen and (max-width: 360px)
+	.box14_block2
+		max-width: 1120px
+		width: 100%
+		justify-content: space-evenly
+		.box14_block2_1_container
+			max-width: 140px
+			.box14_container_block2
+				text-align: center
+				p 
+					font-size: 70%
+		.box14_block2_1
+			justify-content: space-evenly
+		.box14_container_block1
+			max-width: 140px
+			img
+				max-width: 140px
+// box15
+.box15 
+	@extend %flexCenter
+	@extend %maxWidth
+	// margin-bottom: 50px
+	min-height: 480px
+	height: 100%
+	.box15_ 
+		@extend %flexCenter
+		flex-direction: column
+		justify-content: space-evenly
+		max-width: 1250px
+		min-height: 480px
+		height: 95%
+.box15_block1
+	h2 
+.box15_block2
+	max-width: 1250px
+	width: 95%
+	min-height: 310px
+	// height: 95%
+	display: flex
+	justify-content: space-between
+	.box15_block2_video
+		max-width: 500px
+		min-height: 310px
+		height: 100%
+		&:first-child
+			margin-right: 25px
+	video
+		max-width: 500px
+		width: 100%
+@media only screen and (max-width: 720px)
+	.box15
+		margin-bottom: 50px
+		.box15_ 
+			justify-content: center
+			align-items: center
+	.box15_block1
+		margin-bottom: 20px
+	.box15_block2
+		flex-direction: column
+		.box15_block2_video
+			min-height: 320px
+			height: 100%
+			&:first-child
+				margin-right: 0px
+				margin-bottom: 20px
+@media only screen and (max-width: 380px)
+	.box15_block1
+		margin-bottom: 10px
+	.box15_block2
+		.box15_block2_video
+			min-height: 270px
+			&:first-child
+				margin-bottom: 0px
+// box16
+.box16
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 500px
+	height: 100%
+	background: $backgroundLiteLitePink
+	.box16_ 
+		@extend %flexCenter
+		// justify-content: space-between
+		max-width: 1250px
+		width: 95%
+		min-height: 500px
+		height: 100%
+.box16_block1
+	width: 40%
+	min-height: 500px
+	height: 100%
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	margin-right: 20px
+	.box16_block1_h2
+		max-width: 350px
+		h2 	
+form 
+	width: 100%
+	min-height: 150px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	.form_input_text
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		min-height: 80px
+		max-width: 350px
+		input
+			border: none
+			border-bottom: 1px solid rgba(0, 0, 0, .4)
+			background: $backgroundLiteLitePink
+	.form_checkbox
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: 450px
+		width: 100%
+		min-height: 80px
+		p 
+			max-width: 400px
+			margin-left: 15px
+			a 
+				border-bottom: .5px solid #000
+	.form_submit
+		input
+			@extend %buttonRed
+			border: none
+			cursor: pointer
+
+.box16_block2
+	width: 60%
+	min-height: 500px
+	display: flex
+	flex-direction: column
+	justify-content: space-evenly
+	.box16_block2_h2
+		display: flex
+		justify-content: center
+		h2 
+			max-width: 330px
+			text-align: center
+	.box16_block2_text
+		min-height: 350px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		.box16_block2_text_
+			display: flex
+			justify-content: space-between
+			background: $colorfff
+			margin-bottom: 10px
+			&:first-child
+				margin-top: 10px
+			h4 
+				max-width: 490px
+				padding: 10px
+			&:nth-child(3)
+				h4 
+					padding: 10px 0px 10px 0px
+			.box16_block2_text_-
+				max-width: 490px
+				padding: 10px
+
+			.box16_arrow
+				background: $backgroundbutton
+				min-width: 15px
+				height: 15px
+				display: flex
+				justify-content: center
+				align-items: center
+				border-radius: 50%
+				margin: 10px 10px 10px 10px
+				img 
+					width: 10px
+					object-fit: contain
+@media only screen and (max-width: 990px)
+	.box16 
+		.box16_
+			flex-direction: column
+	.box16_block1
+		order: 2
+		margin-right: 0
+		width: 100%
+		display: flex
+		align-items: center
+		.box16_block1_h2 
+			h2 
+				text-align: center
+	.box16_block2
+		max-width: 900px
+		width: 100%
+	form 
+		display: flex
+		align-items: center
+		padding: 0px 20px 0px 20px
+		.form_submit
+			display: flex
+			justify-content: center
+			align-items: center
+		.form_input_text
+			width: 100%
+		.form_checkbox
+			max-width: 350px
+			p 
+				max-width: 260px
+@media only screen and (max-width: 370px)
+	form 
+		.form_checkbox
+			flex-direction: column
+			justify-content: space-evenly
+			margin-top: 10px
+			margin-bottom: 10px
+			p 
+				text-align: center
+				margin-left: 0
+				margin-top: 5px
+// footer
+.footer
+	@extend %flexCenter
+	@extend %maxWidth
+	min-height: 180px
+	height: 100%
+	background: $backgroundbutton
+	// margin-bottom: 300px
+	color: $colorfff
+	.footer_
+		display: flex
+		justify-content: space-between
+		min-height: 180px
+		height: 100%
+		max-width: 1250px
+		width: 95%
+		margin-top: 20px
+.footer_block1
+	max-width: 250px
+	width: 100%
+	min-height: 180px
+	height: 100%
+	p 	
+		margin-top: 10px
+.footer_block2
+	max-width: 250px
+	width: 100%
+	min-height: 180px
+	height: 100%
+	margin-left: 20px
+	h4 
+		margin-left: 10px
+	.a_footer_block2
+		margin-top: 10px
+		display: flex
+	.footer_href
+		display: flex
+		flex-direction: column
+	a 
+		display: block
+		padding: 10px 10px
+		color: $colorfff
+		transition-duration: .4s
+		transition-property: all
+		&:hover 
+			background: $backgroundLitePink
+			color: #000
+			transition-duration: .7s
+			transition-property: all
+.footer_block3
+	max-width: 250px
+	width: 100%
+	min-height: 180px
+	height: 100%
+	margin-left: 20px
+	p 
+		margin-top: 10px
+
+.footer_block4
+	max-width: 250px
+	width: 100%
+	min-height: 180px
+	height: 100%
+	margin-left: 20px
+	.footer_link
+		margin-top: 10px
+		max-width: 60px
+		width: 100%
+		display: flex
+		justify-content: space-between
+	.footer_eye
+		display: flex
+		margin-top: 10px
+		.footer_eye_
+			margin-right: 10px
+		a 
+			color: $colorfff
+@media only screen and (max-width: 930px)
+	.footer_block2
+		display: none
+	// .footer
+	// 	.footer_
+	// 		flex-direction: column
+@media only screen and (max-width: 660px)
+	.footer
+		.footer_
+			font-size: 70%
+			// flex-direction: column
+			// justify-content: center
+			// align-items: center
+	.footer_block1
+		// order: 3
+@media only screen and (max-width: 450px)
+	.footer
+		.footer_
+			flex-direction: column
+			align-items: center
+	.footer_block1 
+		display: flex
+		flex-direction: column
+		align-items: center
+		min-height: 150px
+	.footer_block3, .footer_block4
+		min-height: 120px
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-left: 0
+	.footer_block4
+		min-height: 100px
